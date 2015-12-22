@@ -1,7 +1,6 @@
-/**
-  * @author slcoolj
-  */
+package org.bitbucket.sudafed.mod
 
-class Sudafed{
+object Sudafed {
 
+  def printSudafed(str: String) = println("[SUDAFED]: " + str)
 }

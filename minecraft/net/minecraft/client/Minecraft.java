@@ -183,7 +183,6 @@ import org.lwjgl.opengl.GLContext;
 import org.lwjgl.opengl.OpenGLException;
 import org.lwjgl.opengl.PixelFormat;
 import org.lwjgl.util.glu.GLU;
-import xyz.slcoolj.dickslap.Dickslap;
 
 public class Minecraft implements IThreadListener, IPlayerUsage
 {
@@ -400,7 +399,6 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
         while (true)
         {
-            Dickslap.getInstance().init();
             try
             {
                 while (this.running)
