@@ -1,0 +1,7 @@
+/**
+  * @author slcoolj
+  */
+
+class Sudafed{
+
+}
