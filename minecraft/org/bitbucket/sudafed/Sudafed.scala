@@ -10,6 +10,8 @@ object Sudafed {
   def printSudafed(str: String) = println("[SUDAFED]: " + str)
   
   def setup {
-    modManager.loadMods()
+    modManager.loadMods
+    Sudafed.printSudafed("Loaded " + modManager.mods.size + " mod(s)")
+    printSudafed("Setup complete!")
   }
 }

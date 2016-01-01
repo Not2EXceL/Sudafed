@@ -19,7 +19,10 @@ class ModManager {
   val mods = ArrayBuffer[Mod]()
 
   def loadMods(){
-    for(s <- shit) mods += s
+    mods.clear()
+    for(s <- shit){
+      mods += s
+    }
   }
 
   @Subscribe

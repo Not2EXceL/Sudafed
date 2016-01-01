@@ -5,8 +5,8 @@ import net.minecraft.network.Packet
 /**
   * @author sl
   */
-class EventPacket(var packet: Packet, outgoing: Boolean) {
-  var (cancelled, p, og) = (false, packet, outgoing)
+class EventPacket(var packet: Packet, og: Boolean) {
+  var (cancelled, p, outgoing) = (false, packet, og)
 
-  def isIncoming = !outgoing
+  def isIncoming = !og
 }

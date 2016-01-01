@@ -17,8 +17,8 @@ class ChestStealer extends Mod("Chest Stealer", Keyboard.KEY_C, 0xFFFFEE){
   val timer = new Timer
   @Subscribe
   def preUpdate(event: EventPreUpdate){
-    mc.currentScreen match {
-      case chest: GuiChest =>
+    if(mc.currentScreen.isInstanceOf[GuiChest]){
+        val chest = mc.currentScreen.asInstanceOf[GuiChest]
         if (empty(chest) || inventoryFull) mc.thePlayer.closeScreen()
         for (index <- 0 until chest.lowerChestInventory.getSizeInventory) {
           val stack = chest.lowerChestInventory.getStackInSlot(index)
