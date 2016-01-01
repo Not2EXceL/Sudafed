@@ -112,6 +112,18 @@ public class S12PacketEntityVelocity implements Packet
         return this.field_149414_d;
     }
 
+    public void setMotX(int motX) {
+        this.field_149415_b = motX;
+    }
+
+    public void setMotY(int motY) {
+        this.field_149416_c = motY;
+    }
+
+    public void setMotZ(int motZ) {
+        this.field_149414_d = motZ;
+    }
+
     /**
      * Passes this Packet on to the NetHandler for processing.
      */

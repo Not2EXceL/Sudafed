@@ -1,13 +1,19 @@
 package org.bitbucket.sudafed.mod
 
 import net.minecraft.client.Minecraft
+import org.bitbucket.sudafed.Sudafed
 
 abstract class Mod(label: String, bind: Int, flavor: Int) {
 
-  var (name, state, key, color, visible) = (label, false, key, flavor, true)
+  var (state, visible, name, key, color) = (false, true, label, bind, flavor)
   val mc = Minecraft.getMinecraft
 
-  def toggle = state = !state
+  def postToggle(){}
 
-  Sudafed.printSudafed("Loaded mod " + name)
+  def toggle(){
+    state = !state
+    postToggle()
+  }
+
+  Sudafed.printSudafed("Loaded " + name)
 }

@@ -45,7 +45,7 @@ public class WorldClient extends World
     private ChunkProviderClient clientChunkProvider;
 
     /** Contains all entities for this client, both spawned and non-spawned. */
-    private final Set entityList = Sets.newHashSet();
+    public final Set entityList = Sets.newHashSet();
 
     /**
      * Contains all entities for this client that were not spawned due to a non-present chunk. The game will attempt to

@@ -42,6 +42,8 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StringUtils;
 import net.minecraft.world.border.WorldBorder;
+import org.bitbucket.sudafed.Sudafed;
+import org.bitbucket.sudafed.events.EventHUDRender;
 
 public class GuiIngame extends Gui
 {
@@ -225,6 +227,8 @@ public class GuiIngame extends Gui
         {
             this.overlayDebug.func_175237_a(var2);
         }
+
+        Sudafed.eventBus().post(new EventHUDRender());
 
         int var9;
 

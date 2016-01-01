@@ -170,6 +170,8 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.bitbucket.sudafed.Sudafed;
+import org.bitbucket.sudafed.events.EventKeyPress;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.Sys;
 import org.lwjgl.input.Keyboard;
@@ -388,6 +390,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         try
         {
             this.startGame();
+            Sudafed.setup();
         }
         catch (Throwable var11)
         {
@@ -1918,6 +1921,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                     }
                     else
                     {
+                        Sudafed.eventBus().post(new EventKeyPress());
                         if (var1 == 1)
                         {
                             this.displayInGameMenu();

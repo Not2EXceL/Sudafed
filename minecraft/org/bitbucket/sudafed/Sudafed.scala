@@ -1,11 +1,15 @@
-package org.bitbucket.sudafed.mod
+package org.bitbucket.sudafed
+
+import com.google.common.eventbus.EventBus
+import org.bitbucket.sudafed.managers.ModManager
 
 object Sudafed {
+  val eventBus = new EventBus
   val modManager = new ModManager
 
   def printSudafed(str: String) = println("[SUDAFED]: " + str)
   
-  def setup: Unit ={
+  def setup {
     modManager.loadMods()
   }
 }

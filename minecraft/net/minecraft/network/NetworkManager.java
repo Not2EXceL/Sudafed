@@ -40,6 +40,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.MarkerManager;
+import org.bitbucket.sudafed.Sudafed;
+import org.bitbucket.sudafed.events.EventPacket;
 
 public class NetworkManager extends SimpleChannelInboundHandler
 {
@@ -139,7 +141,11 @@ public class NetworkManager extends SimpleChannelInboundHandler
         {
             try
             {
-                p_channelRead0_2_.processPacket(this.packetListener);
+                EventPacket event = new EventPacket(p_channelRead0_2_, false);
+                Sudafed.eventBus().post(event);
+                if(!event.cancelled()) {
+                    p_channelRead0_2_.processPacket(this.packetListener);
+                }
             }
             catch (ThreadQuickExitException var4)
             {

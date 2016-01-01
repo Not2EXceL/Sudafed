@@ -51,6 +51,9 @@ import net.minecraft.util.MovementInput;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IInteractionObject;
 import net.minecraft.world.World;
+import org.bitbucket.sudafed.Sudafed;
+import org.bitbucket.sudafed.events.EventPostUpdate;
+import org.bitbucket.sudafed.events.EventPreUpdate;
 
 public class EntityPlayerSP extends AbstractClientPlayer
 {
@@ -134,6 +137,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
     {
         if (this.worldObj.isBlockLoaded(new BlockPos(this.posX, 0.0D, this.posZ)))
         {
+            Sudafed.eventBus().post(new EventPreUpdate());
             super.onUpdate();
 
             if (this.isRiding())
@@ -145,6 +149,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
             {
                 this.func_175161_p();
             }
+            Sudafed.eventBus().post(new EventPostUpdate());
         }
     }
 
