@@ -2,7 +2,6 @@ package org.bitbucket.sudafed.mod.mods
 
 import com.google.common.eventbus.Subscribe
 import net.minecraft.client.gui.inventory.GuiChest
-import org.bitbucket.sudafed.Sudafed
 import org.bitbucket.sudafed.events.EventPreUpdate
 import org.bitbucket.sudafed.mod.Mod
 import org.bitbucket.sudafed.util.Timer
@@ -12,8 +11,6 @@ import org.lwjgl.input.Keyboard
   * @author sl
   */
 class ChestStealer extends Mod("Chest Stealer", Keyboard.KEY_C, 0xFFFFEE){
-  Sudafed.eventBus.register(this)
-
   val timer = new Timer
   @Subscribe
   def preUpdate(event: EventPreUpdate){

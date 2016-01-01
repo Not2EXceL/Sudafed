@@ -10,9 +10,9 @@ import org.lwjgl.input.Keyboard
   * @author sl
   */
 class HUD extends Mod("HUD", Keyboard.KEY_NONE, 0xFFFFFF) {
+  Sudafed.eventBus.register(this)
   state = true
   visible = false
-  Sudafed.eventBus.register(this)
 
   @Subscribe
   def onHUDRender(event: EventHUDRender) {

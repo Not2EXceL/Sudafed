@@ -2,7 +2,6 @@ package org.bitbucket.sudafed.mod.mods
 
 import com.google.common.eventbus.Subscribe
 import net.minecraft.network.play.server.S12PacketEntityVelocity
-import org.bitbucket.sudafed.Sudafed
 import org.bitbucket.sudafed.events.EventPacket
 import org.bitbucket.sudafed.mod.Mod
 import org.lwjgl.input.Keyboard
@@ -11,7 +10,6 @@ import org.lwjgl.input.Keyboard
   * @author sl
   */
 class Velocity extends Mod("Velocity", Keyboard.KEY_NONE, 0xD0D0D0){
-  Sudafed.eventBus.register(this)
   var velReduction: Int = 0
   name = "Velocity [" + velReduction + "]"
 
